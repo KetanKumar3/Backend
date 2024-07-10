@@ -1,0 +1,63 @@
+// what is NodeJS :- NodeJS is a javascript runtime server environment. it is used for backend. it is used to create API, routes and many things.
+
+// here we will see how to print "hello world" in nodeJS.
+
+// for this we have to first require module. here module is http. module is a block of code that provide a simple or complex functionality that can communicate with external application. 
+// to use of this we have to use require function.
+
+const http=require('http')
+
+http.createServer((req,res)=>{
+     res.send("hello world")
+}).listen(3000)
+
+// Now type on your browser " localhost:3000 ". you can see hello world on page.
+
+
+// Now we will see How to perform CRUD operation in NodeJS. for this we have to use "fs" module.
+
+const fs=require('fs')
+
+// it will create a file of text.txt and write Hello We Will learn NodeJS.
+
+fs.writeFile("text.txt","Hello We Will learn NodeJS",(err)=>{
+    if(err)
+    console.log(err)
+    else{
+        console.log("done")
+    }
+})
+
+// it will add with fun in text.txt file.
+
+fs.appendFile("text.txt","with fun",(err)=>{
+    if(err)
+        console.log(err)
+    else{
+        console.log("done")
+    }
+})
+
+
+// it will read the data inside text.txt file.
+
+fs.readFile("text.txt","utf8",(err,data)=>{
+    if(err){
+        console.log("not found")
+    }
+    else{
+        console.log(data)
+    }
+})
+
+
+// it will delete the file.
+
+fs.unlink('text.txt',(err)=>{
+    if(err){
+        console.log("error")
+    }
+    else{
+        console.log("successfully deleted")
+    }
+})
